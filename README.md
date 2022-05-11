@@ -117,7 +117,7 @@ add the following to the `docker-compose.yml` file:
 ```yaml
 volumes:
 ...
-    - ./config/airflow.cfg:/opt/airflow/airflow.cfg
+    - ./airflow:/opt/airflow
 ```
 
 ### Run the image
