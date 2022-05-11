@@ -120,6 +120,15 @@ volumes:
     - ./airflow:/opt/airflow
 ```
 
+### Disable things in the default airflow.cfg
+
+
+in `environment`:
+
+```bash
+AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+```
+
 ### Run the image
 
 Init the DB
