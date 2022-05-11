@@ -108,3 +108,9 @@ Mounted directories include:
 - `./logs` - contains logs from task execution and scheduler.
 
 - `./plugins` - you can put your custom plugins here.
+
+### Run the image
+
+```bash
+docker-compose up
+```
