@@ -68,3 +68,43 @@ load_examples = False
 ```bash
 airflow db reset
 ```
+
+## Setup (Docker)
+
+(Optional) Perform memory check to see if you have enough memory to run the image.
+
+About 8GB will be required
+
+```bash
+docker run --rm "debian:bullseye-slim" bash -c 'numfmt --to iec $(echo $(($(getconf _PHYS_PAGES) * $(getconf PAGE_SIZE))))'
+```
+
+Get `docker-compose.yaml`
+
+```bash
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.3.0/docker-compose.yaml'
+```
+
+It contains the following:
+
+- `airflow-scheduler` - The scheduler monitors all tasks and DAGs, then triggers the task instances once their dependencies are complete.
+
+- `airflow-webserver` - The webserver is available at <http://localhost:8080>.
+
+- `airflow-worker` - The worker that executes the tasks given by the scheduler.
+
+- `airflow-init` - The initialization service.
+
+- `flower` - The flower app for monitoring the environment. It is available at <http://localhost:5555>.
+
+- `postgres` - The database.
+
+- `redis` - The redis - broker that forwards messages from scheduler to worker.
+
+Mounted directories include:
+
+- `./dags` - you can put your DAG files here.
+
+- `./logs` - contains logs from task execution and scheduler.
+
+- `./plugins` - you can put your custom plugins here.
