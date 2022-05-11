@@ -111,6 +111,20 @@ Mounted directories include:
 
 ### Run the image
 
+Init the DB
+
+```bash
+docker-compose up airflow-init
+```
+
+This creates an admin account with `airflow` as both username and password.
+
 ```bash
 docker-compose up
+```
+
+### Clean Up
+
+```bash
+docker-compose down --volumes --rmi all
 ```
