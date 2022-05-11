@@ -79,6 +79,7 @@ About 8GB will be required
 docker run --rm "debian:bullseye-slim" bash -c 'numfmt --to iec $(echo $(($(getconf _PHYS_PAGES) * $(getconf PAGE_SIZE))))'
 ```
 
+
 Get `docker-compose.yaml`
 
 ```bash
@@ -108,6 +109,16 @@ Mounted directories include:
 - `./logs` - contains logs from task execution and scheduler.
 
 - `./plugins` - you can put your custom plugins here.
+
+### Map `airflow.cfg` to local folder.
+
+add the following to the `docker-compose.yml` file:
+
+```yaml
+volumes:
+...
+    - ./config/airflow.cfg:/opt/airflow/airflow.cfg
+```
 
 ### Run the image
 
