@@ -7,7 +7,7 @@ from airflow.operators.python_operator import PythonOperator
 def print_hello(ti, **context):
     
     f = open("out.txt", "a")
-    f.write(f"{datetime.now() + timedelta(hours=5, minutes=30)} - Hello World!\n")
+    f.write(f"{datetime.now() + timedelta(hours=5, minutes=30)} - Hello World! {context['dag_run'].conf['key']}\n")
     f.close()
     
     return 'Hello world from first Airflow DAG!'

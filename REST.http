@@ -11,6 +11,9 @@ Authorization: Basic YWlyZmxvdzphaXJmbG93
 content-type: application/json
 
 {
+    "conf": {
+        "key": 3
+    }
 }
 
 # pass `conf` in the request body to be passed on to the DAG
