@@ -148,3 +148,23 @@ docker-compose up
 ```bash
 docker-compose down --volumes --rmi all
 ```
+
+## Accessing the REST API
+
+### Prerequisite
+
+Prepare content for the Authorization header.
+
+```bash
+python3 base64encode.py <airflow:username> <airflow:password>
+```
+
+The Authorization header accepts the following format:
+
+```bash
+Basic <base64 encoded username:password>
+```
+
+Pass the Authorization header to the REST API on each call.
+
+In the case of the Docker setup, since the username and password are both `airflow`, you can pass the following in the header: `YWlyZmxvdzphaXJmbG93`.
