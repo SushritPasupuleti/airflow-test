@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
-# from zoneinfo import ZoneInfo
+import random
 
 def print_header(ti, **context):
     
@@ -17,10 +17,19 @@ def print_body(ti, **context):
     
     f=open("out.txt", "a")
     f.write(f"Message: {context['dag_run'].conf['message']}\n")
+    rand=random.random()
+    return rand
 
 def print_footer(ti, **context):
+    
+    value = ti.xcom_pull(task_ids='body_task')
+    
     f = open("out.txt", "a")
     f.write(f"Cleaning up @{datetime.now() + timedelta(hours=5, minutes=30)}\n")
+    if value is not None:
+        f.write(f"Random Seed: {value}\n")
+    else:
+        f.write("No Random Seed Received\n")
     f.write("================================\n")
     f.close()
 
