@@ -12,7 +12,7 @@ content-type: application/json
 
 {
     "conf": {
-        "key": 3
+        "message": "Hello there"
     }
 }
 
