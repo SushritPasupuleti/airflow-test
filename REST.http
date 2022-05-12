@@ -3,3 +3,15 @@ GET http://localhost:8080/api/v1/dags HTTP/1.1
 Authorization: Basic YWlyZmxvdzphaXJmbG93
 
 ###
+
+# Trigge a DAG
+# Pass the DAG ID here: /api/v1/dags/<dag-id>/dag_runs
+POST http://localhost:8080/api/v1/dags/hello_world/dagRuns HTTP/1.1
+Authorization: Basic YWlyZmxvdzphaXJmbG93
+content-type: application/json
+
+{
+}
+
+# pass `conf` in the request body to be passed on to the DAG
+# "conf": {},
