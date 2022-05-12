@@ -152,3 +152,9 @@ cython_debug/
 #.idea/
 
 airflow_env/
+airflow/out.txt
+airflow/airflow-webserver.pid
+airflow/airflow-worker.pid
+airflow/airflow.cfg
+airflow/logs/scheduler/latest
+airflow/webserver_config.py
