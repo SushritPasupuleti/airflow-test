@@ -1,0 +1,5 @@
+# Get all dags from the DAG folder
+GET http://localhost:8080/api/v1/dags HTTP/1.1
+Authorization: Basic YWlyZmxvdzphaXJmbG93
+
+###

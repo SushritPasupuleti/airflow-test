@@ -168,3 +168,5 @@ Basic <base64 encoded username:password>
 Pass the Authorization header to the REST API on each call.
 
 In the case of the Docker setup, since the username and password are both `airflow`, you can pass the following in the header: `YWlyZmxvdzphaXJmbG93`.
+
+Use the [`REST.http`](/REST.http) file to make some sample requests.
