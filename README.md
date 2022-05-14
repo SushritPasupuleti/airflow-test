@@ -2,6 +2,10 @@
 
 Trying out Apache Airflow
 
+## Sample Workflows
+
+See `./Workflow.md` for details.
+
 ## Setup
 
 ### Init venv
