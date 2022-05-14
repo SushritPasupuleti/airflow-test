@@ -24,3 +24,11 @@ content-type: application/json
 # Get info of triggered DAG run
 GET http://localhost:8080/api/v1/dags/hello_world/dagRuns HTTP/1.1
 Authorization: Basic YWlyZmxvdzphaXJmbG93
+
+###
+
+# Get info of a specific DAG run
+GET http://localhost:8080/api/v1/dags/hello_world/dagRuns/scheduled__2022-05-12T12:00:00+00:00 HTTP/1.1
+Authorization: Basic YWlyZmxvdzphaXJmbG93
+
+###
