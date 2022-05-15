@@ -48,6 +48,7 @@ with DAG(
     schedule_interval="0 12 * * *",
     start_date=datetime(2017, 3, 20),
     catchup=False,
+    tags=["workflow", "support"]
 ) as dag:
 
     task_1 = PythonOperator(task_id="header_task", python_callable=print_header)
