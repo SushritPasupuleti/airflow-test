@@ -44,7 +44,7 @@ def print_footer(ti, **context):
 
 with DAG(
     "support_workflow_process",
-    description="Initialize Support Workflow with this DAG",
+    description="Process Data for Support Workflow with this DAG",
     schedule_interval="0 12 * * *",
     start_date=datetime(2017, 3, 20),
     catchup=False,
